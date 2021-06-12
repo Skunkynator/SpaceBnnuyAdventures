@@ -13,15 +13,31 @@ _global_script_classes=[ {
 "class": "Bullet",
 "language": "GDScript",
 "path": "res://gameplay/bullets/bullet.gd"
+}, {
+"base": "Ship",
+"class": "Player",
+"language": "GDScript",
+"path": "res://gameplay/ships/player.gd"
+}, {
+"base": "Node2D",
+"class": "Ship",
+"language": "GDScript",
+"path": "res://gameplay/ships/ship.gd"
 } ]
 _global_script_class_icons={
 "Bullet": "",
+"Player": "",
+"Ship": ""
 }
 
 [application]
 
 config/name="SpaceBnnuyAdventures"
 config/icon="res://icon.png"
+
+[autoload]
+
+GameInput="*res://gameplay/input/game_input.gd"
 
 [display]
 
