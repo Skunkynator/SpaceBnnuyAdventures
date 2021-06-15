@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://gameplay/ships/player_Ship.tscn" type="PackedScene" id=1]
-[ext_resource path="res://gameplay/bullets/bullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://gameplay/ships/scenes/player_Ship.tscn" type="PackedScene" id=1]
+[ext_resource path="res://gameplay/ships/scenes/simple_enemy_ship.tscn" type="PackedScene" id=2]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Ship" parent="." instance=ExtResource( 1 )]
 position = Vector2( 241.5, 269.5 )
-projectile = ExtResource( 2 )
+z_index = 1
 
-[node name="Node2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 212.465, 136.116 )
+[node name="Ship2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 367.181, 27.8205 )
