@@ -33,11 +33,13 @@ _global_script_class_icons={
 [application]
 
 config/name="SpaceBnnuyAdventures"
+run/main_scene="res://menu/main_menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 GameInput="*res://gameplay/input/game_input.gd"
+GameController="*res://gameplay/game_controller.gd"
 
 [display]
 
