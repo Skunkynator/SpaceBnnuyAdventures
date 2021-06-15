@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/small-carrot-spin1.png-966c56ce7905e4702e25215235103b20.stex"
+path="res://.import/bullet1.png-a50b0d3bc17c8bbe8dd31c3201665e5b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gameplay/bullets/small-carrot-spin1.png"
-dest_files=[ "res://.import/small-carrot-spin1.png-966c56ce7905e4702e25215235103b20.stex" ]
+source_file="res://gameplay/bullets/images/bullet1.png"
+dest_files=[ "res://.import/bullet1.png-a50b0d3bc17c8bbe8dd31c3201665e5b.stex" ]
 
 [params]
 
