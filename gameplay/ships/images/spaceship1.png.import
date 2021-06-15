@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spaceship1.png-b6921d53d01d844a32866d0167464672.stex"
+path="res://.import/spaceship1.png-9ed138f9f576945594b569ad6e95a60d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gameplay/ships/spaceship1.png"
-dest_files=[ "res://.import/spaceship1.png-b6921d53d01d844a32866d0167464672.stex" ]
+source_file="res://gameplay/ships/images/spaceship1.png"
+dest_files=[ "res://.import/spaceship1.png-9ed138f9f576945594b569ad6e95a60d.stex" ]
 
 [params]
 
