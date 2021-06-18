@@ -4,7 +4,7 @@
 [ext_resource path="res://gameplay/bullets/images/small-carrot-spin1.png" type="Texture" id=2]
 
 [node name="Bullet" instance=ExtResource( 1 )]
-speed = 100.0
+speed = 200.0
 
 [node name="Sprite" parent="." index="2"]
 texture = ExtResource( 2 )
