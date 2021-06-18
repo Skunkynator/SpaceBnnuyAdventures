@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://gameplay/bullets/bullet.gd"
 }, {
+"base": "Resource",
+"class": "Pattern",
+"language": "GDScript",
+"path": "res://gameplay/shoot_patterns/pattern.gd"
+}, {
 "base": "Ship",
 "class": "Player",
 "language": "GDScript",
@@ -26,6 +31,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Bullet": "",
+"Pattern": "",
 "Player": "",
 "Ship": ""
 }

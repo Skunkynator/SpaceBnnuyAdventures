@@ -1,11 +1,18 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://gameplay/ships/player.gd" type="Script" id=1]
 [ext_resource path="res://gameplay/ships/scenes/ship.tscn" type="PackedScene" id=2]
+[ext_resource path="res://gameplay/shoot_patterns/pattern.gd" type="Script" id=3]
 [ext_resource path="res://gameplay/bullets/scenes/player_bullet.tscn" type="PackedScene" id=4]
 
+[sub_resource type="Resource" id=3]
+script = ExtResource( 3 )
+bulletAmount = 4.0
+bulletAngleDiff = 10.0
+bulletAngleRadDiff = 0.174533
+
 [sub_resource type="CircleShape2D" id=1]
-radius = 6.70743
+radius = 4.35939
 
 [sub_resource type="StreamTexture" id=2]
 load_path = "res://.import/spaceship1.png-9ed138f9f576945594b569ad6e95a60d.stex"
@@ -13,6 +20,7 @@ load_path = "res://.import/spaceship1.png-9ed138f9f576945594b569ad6e95a60d.stex"
 [node name="Ship" instance=ExtResource( 2 )]
 script = ExtResource( 1 )
 projectile = ExtResource( 4 )
+patternRes = SubResource( 3 )
 
 [node name="CollisionShape2D" parent="ship" index="0"]
 shape = SubResource( 1 )

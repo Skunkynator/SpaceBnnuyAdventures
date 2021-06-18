@@ -7,10 +7,18 @@ export var Speed: float = 80.0
 export var shootDelta : float = 0.5
 export var Size: Vector2 = Vector2(16,16)
 export var projectile: PackedScene
+export var patternRes: Resource setget set_pattern
+var pattern: Pattern
+
+
+func set_pattern(new_pattern):
+	if new_pattern is Pattern:
+		pattern = new_pattern
 
 
 func _ready():
-	_shoot_bullets()
+	if pattern is Pattern:
+		_shoot_bullets()
 	pass
 
 
@@ -31,10 +39,13 @@ func _on_bullet_hit(bullet: Bullet):
 
 
 func _shoot_bullets():
+	var dir: Vector2
 	while(health > 0):
-		_shoot()
+		dir = (GameController.player.global_position - global_position).normalized()
+		pattern._shoot(global_position, dir, projectile,get_node("/root/Game"))
+		#_shoot()
 		yield(get_tree().create_timer(shootDelta),"timeout")
-	pass
+
 
 func _shoot():
 	var instance : Bullet

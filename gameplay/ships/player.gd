@@ -4,6 +4,7 @@ class_name Player
 
 func _ready():
 	GameController.player = self
+	set_pattern(patternRes)
 
 
 func _process(delta):
@@ -16,7 +17,8 @@ func _shoot_bullets():
 	var offset : Vector2
 	while(health > 0):
 		while(GameInput._shoot_pressed_amount != 0):
-			_shoot()
+			#_shoot()
+			pattern._shoot(global_position, Vector2.UP, projectile,get_node("/root/Game"))
 			yield(get_tree().create_timer(shootDelta),"timeout")
 		yield(GameInput,"shoot_pressed")
 
@@ -29,6 +31,6 @@ func clampToScreen():
 
 func _on_bullet_hit(bullet: Bullet):
 	if not bullet.playerBullet:
-		print_debug("owo :" + str(health))
+		print_debug("health: " + str(health))
 		health -= bullet.damage
 		bullet._hit(bullet.damage)
