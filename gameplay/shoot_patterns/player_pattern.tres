@@ -7,3 +7,4 @@ script = ExtResource( 1 )
 bulletAmount = 4.0
 bulletAngleDiff = 10.0
 bulletAngleRadDiff = 0.174533
+bullet_speed = 100.0

@@ -3,8 +3,9 @@ class_name Ship
 
 
 export var health := 100.0
-export var Speed: float = 80.0
+export var speed: float = 80.0
 export var shootDelta : float = 0.5
+export var points: float = 50
 export var Size: Vector2 = Vector2(16,16)
 export var projectile: PackedScene
 export var patternRes: Resource setget set_pattern
@@ -34,6 +35,8 @@ func _on_bullet_hit(bullet: Bullet):
 		if health <= 0:
 			queue_free()
 			bullet._hit(bullet.damage + health)
+			GameController.score += points
+			GameController.level_controller.ship_amount -= 1
 		else:
 			bullet._hit(bullet.damage)
 
@@ -42,7 +45,7 @@ func _shoot_bullets():
 	var dir: Vector2
 	while(health > 0):
 		dir = (GameController.player.global_position - global_position).normalized()
-		pattern._shoot(global_position, dir, projectile,get_node("/root/Game"))
+		pattern._shoot(global_position, dir, projectile,GameController.game_root)
 		#_shoot()
 		yield(get_tree().create_timer(shootDelta),"timeout")
 

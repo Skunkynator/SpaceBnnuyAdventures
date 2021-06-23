@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://menu/options_button/OptionsBtn1.png" type="Texture" id=1]
 [ext_resource path="res://menu/start_button/Start3.png" type="Texture" id=2]
@@ -13,6 +13,10 @@
 [ext_resource path="res://menu/TitleScreen/TitleScreen.tres" type="Texture" id=11]
 [ext_resource path="res://menu/menu_controller.gd" type="Script" id=12]
 [ext_resource path="res://background/parallex_background.tscn" type="PackedScene" id=13]
+[ext_resource path="res://big_pixel_font.tres" type="DynamicFont" id=14]
+[ext_resource path="res://pixel_button.tscn" type="PackedScene" id=15]
+[ext_resource path="res://menu/Whats up doc.png" type="Texture" id=16]
+[ext_resource path="res://Bring_Me_the_Van.ttf" type="DynamicFontData" id=17]
 
 [sub_resource type="AnimatedTexture" id=1]
 frames = 2
@@ -28,6 +32,14 @@ frame_0/texture = ExtResource( 9 )
 frame_1/texture = ExtResource( 10 )
 frame_1/delay_sec = 0.0
 
+[sub_resource type="DynamicFont" id=3]
+size = 8
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 8
+font_data = ExtResource( 17 )
+
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -35,8 +47,20 @@ script = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+main_path = NodePath("main")
+settings_path = NodePath("settings")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="ParallaxBackground" parent="." instance=ExtResource( 13 )]
+
+[node name="main" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="main"]
 anchor_right = 1.0
 margin_top = 10.0
 margin_bottom = 98.0
@@ -47,7 +71,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="main"]
 margin_left = 150.0
 margin_top = 114.2
 margin_right = 203.0
@@ -57,7 +81,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton3" type="TextureButton" parent="VBoxContainer"]
+[node name="TextureButton3" type="TextureButton" parent="main/VBoxContainer"]
 margin_right = 53.0
 margin_bottom = 17.0
 rect_min_size = Vector2( 41, 17 )
@@ -73,7 +97,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton4" type="TextureButton" parent="VBoxContainer"]
+[node name="TextureButton4" type="TextureButton" parent="main/VBoxContainer"]
 margin_top = 21.0
 margin_right = 53.0
 margin_bottom = 36.0
@@ -89,8 +113,135 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="settings" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="ParallaxBackground" parent="." instance=ExtResource( 13 )]
+[node name="TextureButton" parent="settings" instance=ExtResource( 15 )]
+margin_left = 382.976
+margin_top = 245.735
+margin_right = 502.976
+margin_bottom = 279.735
 
-[connection signal="pressed" from="VBoxContainer/TextureButton3" to="." method="_on_playbtn_pressed"]
+[node name="Label" type="Label" parent="settings/TextureButton"]
+margin_left = 32.2195
+margin_top = 10.4292
+margin_right = 84.2195
+margin_bottom = 26.4292
+custom_fonts/font = ExtResource( 14 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "back"
+
+[node name="ColorRect" type="ColorRect" parent="settings"]
+margin_left = 131.0
+margin_top = 8.0
+margin_right = 387.0
+margin_bottom = 126.0
+color = Color( 0, 0, 0, 0.482353 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="settings"]
+margin_left = 35.0
+margin_top = 197.0
+margin_right = 235.0
+margin_bottom = 243.0
+color = Color( 0, 0, 0, 0.482353 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="settings"]
+margin_top = 21.0331
+margin_right = 512.0
+margin_bottom = 113.033
+custom_fonts/font = ExtResource( 14 )
+text = "Controlls:
+
+
+to move
+and Space to shoot"
+align = 1
+autowrap = true
+
+[node name="Label4" type="Label" parent="settings"]
+margin_left = 38.6465
+margin_top = 203.646
+margin_right = 232.646
+margin_bottom = 244.646
+custom_fonts/font = SubResource( 3 )
+text = "Credits:
+Nikos: Font and levels
+Skunky: levels, art, ui and code"
+align = 1
+autowrap = true
+
+[node name="Label3" type="Label" parent="settings"]
+margin_left = 213.0
+margin_top = 48.0
+margin_right = 369.0
+margin_bottom = 68.0
+rect_pivot_offset = Vector2( 44.2565, 75.6254 )
+custom_fonts/font = ExtResource( 14 )
+text = "Or arrow keys"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="settings"]
+margin_left = 111.426
+margin_top = 149.268
+margin_right = 421.426
+margin_bottom = 169.268
+rect_pivot_offset = Vector2( 44.2565, 75.6254 )
+custom_fonts/font = ExtResource( 14 )
+text = "settings coming soon"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="settings"]
+margin_left = 391.904
+margin_top = 146.377
+margin_right = 410.904
+margin_bottom = 166.377
+rect_pivot_offset = Vector2( 44.2565, 75.6254 )
+custom_fonts/font = SubResource( 4 )
+text = "TM"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="settings"]
+margin_left = 164.922
+margin_top = 38.4118
+margin_right = 204.922
+margin_bottom = 73.4118
+custom_fonts/font = ExtResource( 14 )
+text = "w
+asd"
+align = 1
+
+[node name="TextureRect2" type="TextureRect" parent="settings"]
+margin_left = 8.62175
+margin_top = 5.05413
+margin_right = 70.6217
+margin_bottom = 90.0541
+texture = ExtResource( 16 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="main/VBoxContainer/TextureButton3" to="." method="_on_playbtn_pressed"]
+[connection signal="pressed" from="main/VBoxContainer/TextureButton4" to="." method="open_settings"]
+[connection signal="pressed" from="settings/TextureButton" to="." method="open_main"]

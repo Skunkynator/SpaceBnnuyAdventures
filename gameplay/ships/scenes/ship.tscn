@@ -3,7 +3,7 @@
 [ext_resource path="res://gameplay/ships/ship.gd" type="Script" id=1]
 [ext_resource path="res://gameplay/shoot_patterns/player_pattern.tres" type="Resource" id=2]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 
 [node name="Ship" type="Node2D"]
 script = ExtResource( 1 )
@@ -12,7 +12,7 @@ patternRes = ExtResource( 2 )
 [node name="ship" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ship"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Texture" type="Sprite" parent="."]
 

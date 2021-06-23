@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://gameplay/ships/scenes/simple_enemy_ship.tscn" type="PackedScene" id=1]
+
+[node name="Ship" instance=ExtResource( 1 )]
+health = 300.0
+speed = 20.0
+shootDelta = 0.25
+points = 500.0
+slow_middle = true

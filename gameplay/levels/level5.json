@@ -1,0 +1,98 @@
+{
+    "length": 100,
+    "level": [
+        {
+            "time": 2,
+            "type": 7,
+            "path": 3
+        },{
+            "time": 5,
+            "type": 6,
+            "path": 4
+        },{
+            "time": 5,
+            "type": 6,
+            "path": 5
+        },{
+            "time": 10,
+            "type": 5,
+            "path": 2
+        },{
+            "time": 10,
+            "type": 5,
+            "path": 1
+        },{
+            "time": 15,
+            "type": 7,
+            "path": 3
+        },{
+            "time": 30,
+            "type": 3,
+            "path": 1
+        },{
+            "time": 30,
+            "type": 3,
+            "path": 2
+        },{
+            "time": 35,
+            "type": 6,
+            "path": 5
+        },{
+            "time": 35,
+            "type": 6,
+            "path": 4
+        },{
+            "time": 35,
+            "type": 4,
+            "path": 3
+        },{
+            "time": 45,
+            "type": 4,
+            "path": 0
+        },{
+            "time": 46,
+            "type": 4,
+            "path": 0
+        },{
+            "time": 47,
+            "type": 5,
+            "path": 0
+        },{
+            "time": 48,
+            "type": 4,
+            "path": 0
+        },{
+            "time": 49,
+            "type": 4,
+            "path": 0
+        },{
+            "time": 50,
+            "type": 5,
+            "path": 0
+        },{
+            "time": 51,
+            "type": 7,
+            "path": 0
+        },{
+            "time": 55,
+            "type": 7,
+            "path": 1
+        },{
+            "time": 55,
+            "type": 7,
+            "path": 2
+        },{
+            "time": 58,
+            "type": 7,
+            "path": 5
+        },{
+            "time": 58,
+            "type": 7,
+            "path": 4
+        },{
+            "time": 65,
+            "type": 8,
+            "path": 5
+        }
+    ]
+}

@@ -1,29 +1,42 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://gameplay/ships/player.gd" type="Script" id=1]
 [ext_resource path="res://gameplay/ships/scenes/ship.tscn" type="PackedScene" id=2]
 [ext_resource path="res://gameplay/shoot_patterns/pattern.gd" type="Script" id=3]
 [ext_resource path="res://gameplay/bullets/scenes/player_bullet.tscn" type="PackedScene" id=4]
+[ext_resource path="res://gameplay/ships/images/bnnuy-ship3.png" type="Texture" id=5]
+[ext_resource path="res://gameplay/ships/images/bnnuy-ship1.png" type="Texture" id=6]
+[ext_resource path="res://gameplay/ships/images/bnnuy-ship2.png" type="Texture" id=7]
+[ext_resource path="res://gameplay/ships/images/bnnuy-ship4.png" type="Texture" id=8]
 
-[sub_resource type="Resource" id=3]
+[sub_resource type="Resource" id=1]
 script = ExtResource( 3 )
 bulletAmount = 4.0
 bulletAngleDiff = 10.0
 bulletAngleRadDiff = 0.174533
+bullet_speed = 100.0
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=2]
 radius = 4.35939
 
-[sub_resource type="StreamTexture" id=2]
-load_path = "res://.import/spaceship1.png-9ed138f9f576945594b569ad6e95a60d.stex"
+[sub_resource type="AnimatedTexture" id=3]
+frames = 4
+fps = 24.0
+frame_0/texture = ExtResource( 6 )
+frame_1/texture = ExtResource( 7 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 5 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 8 )
+frame_3/delay_sec = 0.0
 
 [node name="Ship" instance=ExtResource( 2 )]
 script = ExtResource( 1 )
 projectile = ExtResource( 4 )
-patternRes = SubResource( 3 )
+patternRes = SubResource( 1 )
 
 [node name="CollisionShape2D" parent="ship" index="0"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Texture" parent="." index="1"]
-texture = SubResource( 2 )
+texture = SubResource( 3 )

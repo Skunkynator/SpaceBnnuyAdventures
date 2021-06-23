@@ -1,0 +1,89 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://pixel_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://background/parallex_background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://menu/end_menu_controller.gd" type="Script" id=3]
+[ext_resource path="res://big_pixel_font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://menu/base_btn/base_btn4.png" type="Texture" id=5]
+[ext_resource path="res://menu/base_btn/base_btn5.png" type="Texture" id=6]
+[ext_resource path="res://pixel_button.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Bring_Me_the_Van.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 8 )
+
+[sub_resource type="AnimatedTexture" id=1]
+frames = 2
+frame_0/texture = ExtResource( 5 )
+frame_1/texture = ExtResource( 6 )
+frame_1/delay_sec = 0.0
+
+[sub_resource type="AnimatedTexture" id=2]
+frames = 2
+frame_0/texture = ExtResource( 5 )
+frame_1/texture = ExtResource( 6 )
+frame_1/delay_sec = 0.0
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 217.41
+margin_top = 90.4117
+margin_right = 289.41
+margin_bottom = 104.412
+custom_fonts/font = ExtResource( 1 )
+text = "You did it!"
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 0.405396
+margin_top = 27.8651
+margin_right = 510.405
+margin_bottom = 59.8651
+custom_fonts/font = SubResource( 3 )
+text = "congratulations!"
+align = 1
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 2 )]
+
+[node name="TextureButton" parent="." instance=ExtResource( 7 )]
+margin_left = 375.0
+margin_top = 240.0
+margin_right = 495.0
+margin_bottom = 274.0
+texture_focused = SubResource( 1 )
+
+[node name="Label" type="Label" parent="TextureButton"]
+margin_left = 6.16685
+margin_top = 9.74858
+margin_right = 112.167
+margin_bottom = 25.7486
+custom_fonts/font = ExtResource( 4 )
+text = "Restart"
+align = 1
+
+[node name="TextureButton2" parent="." instance=ExtResource( 7 )]
+margin_left = 8.5
+margin_top = 240.0
+margin_right = 128.5
+margin_bottom = 274.0
+rect_pivot_offset = Vector2( 0, 0.5 )
+texture_focused = SubResource( 2 )
+
+[node name="Label" type="Label" parent="TextureButton2"]
+margin_left = 6.0
+margin_top = 10.0
+margin_right = 114.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 4 )
+text = "Main"
+align = 1
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_menu_button_pressed"]

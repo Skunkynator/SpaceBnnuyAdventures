@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://gameplay/levels/level_list.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+levels = [ "res://gameplay/levels/level1.json", "res://gameplay/levels/level2.json", "res://gameplay/levels/level3.json", "res://gameplay/levels/level4.json", "res://gameplay/levels/level5.json", "res://gameplay/levels/level6.json", "res://gameplay/levels/level7.json" ]

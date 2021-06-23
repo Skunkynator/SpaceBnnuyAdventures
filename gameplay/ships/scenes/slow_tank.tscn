@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://gameplay/ships/scenes/simple_enemy_ship.tscn" type="PackedScene" id=1]
+[ext_resource path="res://gameplay/shoot_patterns/pattern.gd" type="Script" id=2]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 2 )
+bulletAmount = 10.0
+bulletAngleDiff = 5.0
+bulletAngleRadDiff = 0.0872665
+bullet_speed = 135.0
+
+[node name="Ship" instance=ExtResource( 1 )]
+health = 400.0
+speed = 20.0
+shootDelta = 0.25
+points = 800.0
+patternRes = SubResource( 1 )

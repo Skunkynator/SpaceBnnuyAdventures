@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://gameplay/player/upgrade.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Increase Accuracy"
+player_speed_amount = 0.0
+player_speed_type = 0
+bullet_speed_amount = 0.0
+bullet_speed_type = 0
+bullet_angle_amount = 0.9
+bullet_angle_type = 1
+bullet_amount_amount = 0.0
+bullet_amount_type = 0
+shot_speed_amount = 0.0
+shot_speed_type = 0

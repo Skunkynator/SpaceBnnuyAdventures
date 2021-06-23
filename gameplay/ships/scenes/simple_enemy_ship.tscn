@@ -1,21 +1,32 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://gameplay/ships/scenes/ship.tscn" type="PackedScene" id=1]
 [ext_resource path="res://gameplay/bullets/scenes/enemy_bullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://gameplay/ships/path_follow_ship.gd" type="Script" id=3]
+[ext_resource path="res://gameplay/shoot_patterns/pattern.gd" type="Script" id=4]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="Resource" id=1]
+script = ExtResource( 4 )
+bulletAmount = 3.0
+bulletAngleDiff = 10.0
+bulletAngleRadDiff = 0.174533
+bullet_speed = 100.0
+
+[sub_resource type="CircleShape2D" id=2]
 radius = 17.1851
 
-[sub_resource type="StreamTexture" id=2]
+[sub_resource type="StreamTexture" id=3]
 load_path = "res://.import/EnemyShip.png-031af6458923fc3ba9afb368f2bf8bca.stex"
 
 [node name="Ship" instance=ExtResource( 1 )]
-shootDelta = 1.5
+script = ExtResource( 3 )
+shootDelta = 0.8
 projectile = ExtResource( 2 )
+patternRes = SubResource( 1 )
 
 [node name="CollisionShape2D" parent="ship" index="0"]
 position = Vector2( -0.125, -0.625 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Texture" parent="." index="1"]
-texture = SubResource( 2 )
+texture = SubResource( 3 )

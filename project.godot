@@ -14,6 +14,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://gameplay/bullets/bullet.gd"
 }, {
+"base": "Node2D",
+"class": "LevelController",
+"language": "GDScript",
+"path": "res://gameplay/level_controller.gd"
+}, {
+"base": "Resource",
+"class": "LevelList",
+"language": "GDScript",
+"path": "res://gameplay/levels/level_list.gd"
+}, {
 "base": "Resource",
 "class": "Pattern",
 "language": "GDScript",
@@ -24,16 +34,42 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://gameplay/ships/player.gd"
 }, {
+"base": "Node",
+"class": "PlayerData",
+"language": "GDScript",
+"path": "res://gameplay/player/player_data.gd"
+}, {
 "base": "Node2D",
 "class": "Ship",
 "language": "GDScript",
 "path": "res://gameplay/ships/ship.gd"
+}, {
+"base": "Resource",
+"class": "Upgrade",
+"language": "GDScript",
+"path": "res://gameplay/player/upgrade.gd"
+}, {
+"base": "TextureButton",
+"class": "UpgradeButton",
+"language": "GDScript",
+"path": "res://gameplay/player/upgrades/upgrade_button.gd"
+}, {
+"base": "Resource",
+"class": "UpgradeList",
+"language": "GDScript",
+"path": "res://gameplay/player/upgrade_list.gd"
 } ]
 _global_script_class_icons={
 "Bullet": "",
+"LevelController": "",
+"LevelList": "",
 "Pattern": "",
 "Player": "",
-"Ship": ""
+"PlayerData": "",
+"Ship": "",
+"Upgrade": "",
+"UpgradeButton": "",
+"UpgradeList": ""
 }
 
 [application]
@@ -46,6 +82,7 @@ config/icon="res://icon.png"
 
 GameInput="*res://gameplay/input/game_input.gd"
 GameController="*res://gameplay/game_controller.gd"
+MainPlayerData="*res://gameplay/player/player_data.gd"
 
 [display]
 
